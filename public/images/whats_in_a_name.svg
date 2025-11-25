@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Laag_1" data-name="Laag 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 30">
+  <defs>
+    <style>
+      @font-face {
+        font-family: 'Mundial-Light';
+        src: url('/fonts/MundialLight.otf') format('opentype');
+        font-weight: 300;
+        font-style: normal;
+      }
+      
+      .cls-1, .cls-2 {
+        fill: #4a5d23;
+      }
+
+      .cls-2 {
+        font-family: 'Mundial-Light', Mundial, sans-serif;
+        font-size: 16px;
+        font-weight: 300;
+      }
+
+      .cls-3 {
+        letter-spacing: 0em;
+      }
+
+      .cls-4 {
+        letter-spacing: -.05em;
+      }
+
+      .cls-5 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-6 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-7 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-8 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-9 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-10 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-11 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-12 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-13 {
+        letter-spacing: -.04em;
+      }
+
+      .cls-14 {
+        letter-spacing: -.04em;
+      }
+
+      .cls-15 {
+        letter-spacing: -.04em;
+      }
+
+      .cls-16 {
+        letter-spacing: .01em;
+      }
+    </style>
+  </defs>
+  <text class="cls-2" transform="translate(0 18)"><tspan x="0" y="0">Site by What's in a name</tspan></text>
+  <g transform="scale(0.06) translate(3800, 300)">
+    <path class="cls-1" d="M966.95,188.77h-8.22c0-9.46,4.92-22.06,19.03-22.06,10.27,0,13.57,6.61,13.57,12.42,0,14.38-20.72,23.13-24.38,35.28h-7.33c4.47-15.99,22.87-23.76,22.87-34.83,0-3.31-1.61-5.8-4.92-5.8-5.62,0-10.63,7.32-10.63,15M952.13,226.64c0-3.57,2.86-6.42,6.43-6.42s6.43,2.85,6.43,6.42-2.86,6.43-6.43,6.43-6.43-2.85-6.43-6.43"/>
+    <path class="cls-1" d="M971.73,140.29c-32.86,0-59.6,26.74-59.6,59.6s26.74,59.61,59.6,59.61,59.61-26.74,59.61-59.61-26.74-59.6-59.61-59.6M971.73,265.77c-36.33,0-65.87-29.55-65.87-65.88s29.54-65.87,65.87-65.87,65.88,29.55,65.88,65.87-29.55,65.88-65.88,65.88"/>
+  </g>
+</svg>

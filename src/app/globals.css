@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Mundial Font Face */
+@font-face {
+  font-family: 'Mundial';
+  src: url('/fonts/MundialThin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mundial';
+  src: url('/fonts/MundialThinItalic.otf') format('opentype');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mundial';
+  src: url('/fonts/MundialHair.otf') format('opentype');
+  font-weight: 50;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mundial';
+  src: url('/fonts/MundialHairItalic.otf') format('opentype');
+  font-weight: 50;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mundial';
+  src: url('/fonts/MundialLight.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mundial';
+  src: url('/fonts/MundialRegular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mundial';
+  src: url('/fonts/MundialDemibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mundial';
+  src: url('/fonts/MundialBold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mundial';
+  src: url('/fonts/MundialBlack.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Italic variants */
+@font-face {
+  font-family: 'Mundial';
+  src: url('/fonts/MundialLightItalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mundial';
+  src: url('/fonts/MundialItalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mundial';
+  src: url('/fonts/MundialBoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: 'Mundial', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    scroll-padding-top: 84px;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  body {
+    font-family: 'Mundial', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Mundial', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  /* Add scroll padding to all sections */
+section[id] {
+  scroll-margin-top: 84px;
+}
+
+/* Strong tags gebruiken Mundial DemiBold */
+strong {
+  font-family: 'Mundial-DemiBold', Mundial, sans-serif;
+  font-weight: 600;
+}
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Hero tagline - responsive, no line clamp */
+}
