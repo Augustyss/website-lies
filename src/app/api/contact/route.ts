@@ -38,16 +38,25 @@ Dit bericht is verzonden via het contactformulier op lieschristiaens.be
     if (resendApiKey) {
       try {
         // Dynamisch importeren van Resend (alleen als geïnstalleerd)
-        const { Resend } = await import('resend')
-        const resend = new Resend(resendApiKey)
-
-        await resend.emails.send({
-          from: 'Website Contact <onboarding@resend.dev>', // Gebruik je eigen verified domain
-          to: recipientEmail,
-          replyTo: email,
-          subject: emailSubject,
-          text: emailBody,
-        })
+        let Resend
+        try {
+          const resendModule = await import('resend')
+          Resend = resendModule.Resend
+        } catch (importError) {
+          console.log('⚠️  Resend package niet geïnstalleerd. Installeer met: npm install resend')
+          Resend = null
+        }
+        
+        if (Resend) {
+          const resend = new Resend(resendApiKey)
+          await resend.emails.send({
+            from: 'Website Contact <onboarding@resend.dev>', // Gebruik je eigen verified domain
+            to: recipientEmail,
+            replyTo: email,
+            subject: emailSubject,
+            text: emailBody,
+          })
+        }
       } catch (emailError) {
         console.error('Email sending error:', emailError)
         // Fallback: log naar console
@@ -64,7 +73,7 @@ Dit bericht is verzonden via het contactformulier op lieschristiaens.be
       console.log('From:', email)
       console.log('Subject:', emailSubject)
       console.log('Body:', emailBody)
-      console.log('⚠️  RESEND_API_KEY niet gevonden - installeer Resend en voeg API key toe aan .env.local')
+      console.log('⚠️  RESEND_API_KEY niet gevonden - installeer Resend en voeg API key toe aan environment variables')
     }
     
     return NextResponse.json(
