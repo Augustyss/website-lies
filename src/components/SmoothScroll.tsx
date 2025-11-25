@@ -6,51 +6,72 @@ export default function SmoothScroll() {
   useEffect(() => {
     // Override default smooth scroll behavior for slower animation
     const handleClick = (e: MouseEvent) => {
-      const target = e.target as HTMLElement
-      const link = target.closest('a[href^="#"]')
+      // Find the closest anchor element
+      let element = e.target as HTMLElement | null
+      let link: HTMLAnchorElement | null = null
       
-      if (link) {
-        e.preventDefault()
-        const href = link.getAttribute('href')
-        if (!href) return
-        
-        const targetElement = document.querySelector(href)
-        if (!targetElement) return
-        
-        const navHeight = 84 // Height of sticky nav (exact uit Illustrator)
-        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight
-        const startPosition = window.pageYOffset
-        const distance = targetPosition - startPosition
-        const duration = 1500 // 1.5 seconds for smooth scroll
-        let start: number | null = null
-        
-        const easeInOutCubic = (t: number): number => {
-          return t < 0.5 
-            ? 4 * t * t * t 
-            : 1 - Math.pow(-2 * t + 2, 3) / 2
+      // Traverse up the DOM tree to find anchor
+      while (element && !link) {
+        if (element.tagName === 'A' && element.getAttribute('href')?.startsWith('#')) {
+          link = element as HTMLAnchorElement
+          break
         }
-        
-        const animation = (currentTime: number) => {
-          if (start === null) start = currentTime
-          const timeElapsed = currentTime - start
-          const progress = Math.min(timeElapsed / duration, 1)
-          const ease = easeInOutCubic(progress)
-          
-          window.scrollTo(0, startPosition + distance * ease)
-          
-          if (timeElapsed < duration) {
-            requestAnimationFrame(animation)
-          }
-        }
-        
-        requestAnimationFrame(animation)
+        element = element.parentElement
       }
+      
+      if (!link) return
+      
+      const href = link.getAttribute('href')
+      if (!href || href === '#') return
+      
+      e.preventDefault()
+      e.stopPropagation()
+      
+      const targetElement = document.querySelector(href)
+      if (!targetElement) return
+      
+      const navHeight = 84 // Height of sticky nav
+      const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight
+      const startPosition = window.pageYOffset
+      const distance = targetPosition - startPosition
+      const duration = 1500 // 1.5 seconds for smooth scroll
+      let start: number | null = null
+      
+      const easeInOutCubic = (t: number): number => {
+        return t < 0.5 
+          ? 4 * t * t * t 
+          : 1 - Math.pow(-2 * t + 2, 3) / 2
+      }
+      
+      const animation = (currentTime: number) => {
+        if (start === null) start = currentTime
+        const timeElapsed = currentTime - start
+        const progress = Math.min(timeElapsed / duration, 1)
+        const ease = easeInOutCubic(progress)
+        
+        window.scrollTo({
+          top: startPosition + distance * ease,
+          behavior: 'auto' // Disable native smooth scroll
+        })
+        
+        if (timeElapsed < duration) {
+          requestAnimationFrame(animation)
+        } else {
+          // Update URL hash after animation completes
+          window.history.pushState(null, '', href)
+        }
+      }
+      
+      requestAnimationFrame(animation)
     }
     
-    document.addEventListener('click', handleClick)
-    return () => document.removeEventListener('click', handleClick)
+    // Use capture phase to catch events earlier
+    document.addEventListener('click', handleClick, true)
+    
+    return () => {
+      document.removeEventListener('click', handleClick, true)
+    }
   }, [])
   
   return null
 }
-
