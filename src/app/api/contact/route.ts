@@ -34,43 +34,45 @@ ${bericht}
 Dit bericht is verzonden via het contactformulier op lieschristiaens.be
     `.trim()
 
-    // Email verzenden via Resend als API key beschikbaar is
-    if (resendApiKey) {
-      try {
-        // Dynamisch importeren van Resend (alleen als geïnstalleerd)
-        // Deze import faalt graceful als resend niet geïnstalleerd is
-        try {
-          const resendModule = await import('resend')
-          if (resendModule && resendModule.Resend) {
-            const resend = new resendModule.Resend(resendApiKey)
-            await resend.emails.send({
-              from: 'Website Contact <onboarding@resend.dev>', // Gebruik je eigen verified domain
-              to: recipientEmail,
-              replyTo: email,
-              subject: emailSubject,
-              text: emailBody,
-            })
-            console.log('✅ Email verzonden via Resend')
-          }
-        } catch (importError: any) {
-          // Resend niet geïnstalleerd - dat is ok, we loggen alleen
-          if (importError.code === 'MODULE_NOT_FOUND') {
-            console.log('⚠️  Resend package niet geïnstalleerd. Email wordt gelogd.')
-          } else {
-            console.error('Email sending error:', importError)
-          }
-        }
-      } catch (emailError) {
-        console.error('Email sending error:', emailError)
-      }
-    }
-    
-    // Log altijd voor debugging (ook zonder Resend)
+    // Log altijd voor debugging
     console.log('=== CONTACT FORM SUBMISSION ===')
     console.log('To:', recipientEmail)
     console.log('From:', email)
     console.log('Subject:', emailSubject)
     console.log('Body:', emailBody)
+    
+    // TODO: Email verzending via Resend
+    // Voor nu wordt het alleen gelogd. Om email verzending te activeren:
+    // 1. Installeer: npm install resend
+    // 2. Voeg RESEND_API_KEY toe aan environment variables in Vercel
+    // 3. Uncomment de email verzending code hieronder
+    if (resendApiKey) {
+      console.log('⚠️  Email verzending is nog niet geconfigureerd.')
+      console.log('   Om email verzending te activeren:')
+      console.log('   1. Installeer: npm install resend')
+      console.log('   2. Zie README_EMAIL_SETUP.md voor instructies')
+      
+      // TODO: Uncomment dit wanneer resend is geïnstalleerd:
+      /*
+      try {
+        const { Resend } = await import('resend')
+        const resend = new Resend(resendApiKey)
+        await resend.emails.send({
+          from: 'Website Contact <onboarding@resend.dev>',
+          to: recipientEmail,
+          replyTo: email,
+          subject: emailSubject,
+          text: emailBody,
+        })
+        console.log('✅ Email verzonden via Resend')
+      } catch (error) {
+        console.error('Email sending error:', error)
+      }
+      */
+    } else {
+      console.log('⚠️  RESEND_API_KEY niet gevonden. Email wordt alleen gelogd.')
+      console.log('   Voeg RESEND_API_KEY toe aan environment variables voor email verzending.')
+    }
     
     return NextResponse.json(
       { message: 'Bericht succesvol verzonden! We nemen zo snel mogelijk contact met je op.' },
@@ -84,4 +86,3 @@ Dit bericht is verzonden via het contactformulier op lieschristiaens.be
     )
   }
 }
-
