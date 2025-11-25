@@ -38,43 +38,39 @@ Dit bericht is verzonden via het contactformulier op lieschristiaens.be
     if (resendApiKey) {
       try {
         // Dynamisch importeren van Resend (alleen als geïnstalleerd)
-        let Resend
+        // Deze import faalt graceful als resend niet geïnstalleerd is
         try {
           const resendModule = await import('resend')
-          Resend = resendModule.Resend
-        } catch (importError) {
-          console.log('⚠️  Resend package niet geïnstalleerd. Installeer met: npm install resend')
-          Resend = null
-        }
-        
-        if (Resend) {
-          const resend = new Resend(resendApiKey)
-          await resend.emails.send({
-            from: 'Website Contact <onboarding@resend.dev>', // Gebruik je eigen verified domain
-            to: recipientEmail,
-            replyTo: email,
-            subject: emailSubject,
-            text: emailBody,
-          })
+          if (resendModule && resendModule.Resend) {
+            const resend = new resendModule.Resend(resendApiKey)
+            await resend.emails.send({
+              from: 'Website Contact <onboarding@resend.dev>', // Gebruik je eigen verified domain
+              to: recipientEmail,
+              replyTo: email,
+              subject: emailSubject,
+              text: emailBody,
+            })
+            console.log('✅ Email verzonden via Resend')
+          }
+        } catch (importError: any) {
+          // Resend niet geïnstalleerd - dat is ok, we loggen alleen
+          if (importError.code === 'MODULE_NOT_FOUND') {
+            console.log('⚠️  Resend package niet geïnstalleerd. Email wordt gelogd.')
+          } else {
+            console.error('Email sending error:', importError)
+          }
         }
       } catch (emailError) {
         console.error('Email sending error:', emailError)
-        // Fallback: log naar console
-        console.log('=== EMAIL WOULD BE SENT ===')
-        console.log('To:', recipientEmail)
-        console.log('From:', email)
-        console.log('Subject:', emailSubject)
-        console.log('Body:', emailBody)
       }
-    } else {
-      // Geen API key - log alleen (voor development)
-      console.log('=== CONTACT FORM SUBMISSION ===')
-      console.log('To:', recipientEmail)
-      console.log('From:', email)
-      console.log('Subject:', emailSubject)
-      console.log('Body:', emailBody)
-      console.log('⚠️  RESEND_API_KEY niet gevonden - installeer Resend en voeg API key toe aan environment variables')
     }
+    
+    // Log altijd voor debugging (ook zonder Resend)
+    console.log('=== CONTACT FORM SUBMISSION ===')
+    console.log('To:', recipientEmail)
+    console.log('From:', email)
+    console.log('Subject:', emailSubject)
+    console.log('Body:', emailBody)
     
     return NextResponse.json(
       { message: 'Bericht succesvol verzonden! We nemen zo snel mogelijk contact met je op.' },
