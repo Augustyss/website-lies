@@ -131,7 +131,7 @@ export default function Vragen() {
                 WAT DRAAG IK TIJDENS EEN SESSIE?
               </h3>
               <p className="text-sm md:text-base font-light leading-relaxed" style={{ color: '#4a5c21', fontFamily: 'Mundial-Light, Mundial, sans-serif' }}>
-                <strong>Comfortabele kleren</strong> waarin je makkelijk beweegt. Je houdt je kleding aan; alleen je schoenen gaan uit. Een extra trui kan fijn zijn om na de sessie warm te blijven.
+                <strong>Comfortabele kleren</strong> waarin je makkelijk beweegt. Je houdt je kleding aan; alleen je schoenen gaan uit. Een extra trui kan fijn zijn om na de sessie warm te blijven. Graag vraag ik je om geen parfum, deo of aftershave te gebruiken.
               </p>
             </div>
 

@@ -78,8 +78,8 @@ export default function Praktisch() {
               <p className="leading-relaxed whitespace-pre-line" style={{ color: '#4a5c24', fontFamily: 'Mundial-Light, Mundial, sans-serif' }}>
                 <span style={{ fontFamily: 'Mundial-DemiBold, Mundial, sans-serif', fontWeight: 600 }}>Bellegemsestraat 247{'\n'}8510 Bellegem</span>{'\n'}<span className="font-light">BE 0525.581.929</span>
               </p>
-              <p className="leading-relaxed font-light whitespace-pre-line" style={{ color: '#4a5c24', fontFamily: 'Mundial-Light, Mundial, sans-serif' }}>
-                De praktijk bevindt zich op de eerste verdieping. Er is een leuning aan de trap voor extra steun.{'\n\n'}Je kan me ook bereiken via:{'\n'}<a href="mailto:cranio@lieschristiaens.be" style={{ fontFamily: 'Mundial-DemiBold, Mundial, sans-serif', fontWeight: 600, color: '#4a5c24', textDecoration: 'none' }}>cranio@lieschristiaens.be</a>
+              <p className="leading-relaxed font-light" style={{ color: '#4a5c24', fontFamily: 'Mundial-Light, Mundial, sans-serif' }}>
+                De praktijk bevindt zich op de eerste verdieping. Er is een leuning aan de trap voor extra steun.
               </p>
             </div>
 

@@ -72,8 +72,12 @@ export default function VoorWie() {
             <h3 className="font-sans text-xl font-normal uppercase tracking-wider" style={{ color: '#a0b44f' }}>
               VOOR PASGEBORENEN
             </h3>
-            <p className="leading-relaxed text-sm font-light whitespace-pre-line" style={{ color: '#4a5d24' }}>
-              De geboorte is een intense gebeurtenis, zeker bij een keizersnede,{'\n'}vacuüm, forceps of een moeilijke start. Hierdoor kan spanning{'\n'}ontstaan in het lichaam van je baby, met onrust, veel huilen,{'\n'}slaapproblemen of drinkmoeilijkheden tot gevolg.{'\n'}Cranio kan ondersteunen bij o.a. eenzijdige nekspanning, een{'\n'}verminderde zuigreflex, reflux- en darmproblemen of uitdagingen{'\n'}bij borstvoeding.{'\n'}Veel ouders ervaren dat hun baby na een sessie dieper ontspant{'\n'}en rustiger wordt. De behandeling verloopt helemaal op het tempo{'\n'}<strong>van het kindje</strong>, in een warme en veilige omgeving.
+            <p className="leading-relaxed text-sm font-light whitespace-normal md:whitespace-pre-line" style={{ color: '#4a5d24' }}>
+              De geboorte is een intense gebeurtenis, zeker bij een keizersnede, vacuüm, forceps of een moeilijke start.{'\n'}
+              Hierdoor kan spanning ontstaan in het lichaam van je baby, met onrust, veel huilen, slaapproblemen of drinkmoeilijkheden tot gevolg.{'\n'}
+              Cranio kan ondersteunen bij o.a. eenzijdige nekspanning, een verminderde zuigreflex, reflux- en darmproblemen of uitdagingen bij borstvoeding.{'\n'}
+              Veel ouders ervaren dat hun baby na een sessie dieper ontspant en rustiger wordt.{'\n'}
+              De behandeling verloopt helemaal op het tempo <strong>van het kindje</strong>, in een warme en veilige omgeving.
             </p>
           </div>
 
@@ -82,8 +86,12 @@ export default function VoorWie() {
             <h3 className="font-sans text-xl font-normal uppercase tracking-wider" style={{ color: '#a0b44f' }}>
               VOOR KINDEREN EN JONGEREN
             </h3>
-            <p className="leading-relaxed text-sm font-light whitespace-pre-line" style={{ color: '#4a5d24' }}>
-              Veel kinderen leven vooral 'in hun hoofd' door prikkels, verwachtingen{'\n'}en schermgebruik. Cranio helpt hen <strong>opnieuw verbinding te maken{'\n'}met hun lichaam en hun eigen noden.</strong>{'\n'}De therapie kan ondersteunen bij o.a. angst, bedplassen, hoofdpijn,{'\n'}buikpijn, somberheid, slaapproblemen, overprikkeling, sterke emoties{'\n'}en concentratieproblemen.{'\n'}Voor HSP-kinderen en -tieners voelt Cranio vaak als een zachte{'\n'}thuisbasis waar ze meer adem en ruimte vinden.{'\n'}Ouders blijven meestal bij de sessie aanwezig. Bij tieners bespreken{'\n'}we samen wat fijn en passend aanvoelt.
+            <p className="leading-relaxed text-sm font-light whitespace-normal md:whitespace-pre-line" style={{ color: '#4a5d24' }}>
+              Veel kinderen leven vooral 'in hun hoofd' door prikkels, verwachtingen en schermgebruik.{'\n'}
+              Cranio helpt hen <strong>opnieuw verbinding te maken met hun lichaam en hun eigen noden.</strong>{'\n'}
+              De therapie kan ondersteunen bij o.a. angst, bedplassen, hoofdpijn, buikpijn, somberheid, slaapproblemen, overprikkeling, sterke emoties en concentratieproblemen.{'\n'}
+              Voor HSP-kinderen en -tieners voelt Cranio vaak als een zachte thuisbasis waar ze meer adem en ruimte vinden.{'\n'}
+              Ouders blijven meestal bij de sessie aanwezig. Bij tieners bespreken we samen wat fijn en passend aanvoelt.
             </p>
           </div>
         </div>
@@ -93,8 +101,10 @@ export default function VoorWie() {
           <h3 className="font-sans text-xl font-normal uppercase tracking-wider mb-4" style={{ color: '#a0b44f' }}>
             VOOR OUDEREN
           </h3>
-          <p className="leading-relaxed font-light whitespace-pre-line" style={{ color: '#4a5d24' }}>
-            Met het ouder worden verandert zowel het lichaam als de manier{'\n'}waarop je jezelf voelt en beweegt. Cranio biedt zachte ondersteuning{'\n'}bij thema's zoals spanning, rouw, verminderde veerkracht, zingeving{'\n'}en het kwijtgeraakte vertrouwen in eigen lichaam. Het helpt om{'\n'}opnieuw <strong>rust, ruimte en ontspanning</strong> te ervaren.
+          <p className="leading-relaxed font-light whitespace-normal md:whitespace-pre-line" style={{ color: '#4a5d24' }}>
+            Met het ouder worden verandert zowel het lichaam als de manier waarop je jezelf voelt en beweegt.{'\n'}
+            Cranio biedt zachte ondersteuning bij thema's zoals spanning, rouw, verminderde veerkracht, zingeving en het kwijtgeraakte vertrouwen in eigen lichaam.{'\n'}
+            Het helpt om opnieuw <strong>rust, ruimte en ontspanning</strong> te ervaren.
           </p>
         </div>
 

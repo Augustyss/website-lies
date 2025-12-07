@@ -7,9 +7,10 @@ interface CardProps {
 
 function Card({ title, text }: CardProps) {
   return (
-    <div className="relative bg-white rounded-[30px] p-6 md:p-8 text-center flex flex-col" style={{ 
+    <div className="relative bg-white rounded-[30px] p-5 md:p-8 text-center flex flex-col" style={{ 
       border: '1px solid #a0b450',
-      height: '190px'
+      minHeight: 'auto',
+      height: 'auto'
     }}>
       {/* Icon Badge - SVG positioned zodat zijpunten op bovenrand staan */}
       <div className="absolute left-1/2 -translate-x-1/2" style={{ top: '-24px', zIndex: 10 }}>
@@ -24,14 +25,14 @@ function Card({ title, text }: CardProps) {
 
       {/* Card Content */}
       <div className="pt-2 flex-grow flex flex-col">
-        <h3 className="text-xl uppercase tracking-widest mb-3" style={{ 
+        <h3 className="text-lg md:text-xl uppercase tracking-widest mb-3" style={{ 
           color: '#a0b551',
           fontFamily: 'Mundial-DemiBold, Mundial, sans-serif',
           fontWeight: 600
         }}>
           {title}
         </h3>
-        <p className="leading-relaxed font-light" style={{ color: '#4a5c21' }}>
+        <p className="leading-relaxed font-light text-sm md:text-base" style={{ color: '#4a5c21' }}>
           {text}
         </p>
       </div>
@@ -85,7 +86,7 @@ export default function VoorWat() {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid md:grid-cols-2 gap-x-8 gap-y-16 mb-16 pt-8 items-stretch">
+        <div className="grid md:grid-cols-2 gap-x-8 gap-y-12 md:gap-y-16 mb-16 pt-8 items-stretch">
           {cards.map((card) => (
             <Card key={card.title} title={card.title} text={card.text} />
           ))}
