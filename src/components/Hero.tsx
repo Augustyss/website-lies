@@ -65,7 +65,7 @@ export default function Hero() {
           }}
         >
           <span className="md:whitespace-nowrap">Met zachte aandacht begeleid ik je naar</span><br className="hidden md:block" />
-          <span className="md:whitespace-nowrap">meer rust, ruimte en verbinding in jezelf.</span>
+          <span className="md:whitespace-nowrap">rust, ruimte en verbinding in jezelf.</span>
         </p>
       </div>
 

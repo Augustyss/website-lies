@@ -86,7 +86,7 @@ export default function Vragen() {
                 GEBRUIK JE TIJDENS EEN SESSIE OOK ANDERE TECHNIEKEN?
               </h3>
               <p className="text-sm md:text-base font-light leading-relaxed mb-4 md:mb-6" style={{ color: '#4a5c21', fontFamily: 'Mundial-Light, Mundial, sans-serif' }}>
-                Soms wel, wanneer dat helpend is voor jouw proces.
+                Soms wel, wanneer ik inschat als dat helpend is voor jou als deel van de sessie.
               </p>
             </div>
 
@@ -101,7 +101,7 @@ export default function Vragen() {
                 Acutonics
               </h4>
               <p className="text-sm md:text-base font-light leading-relaxed" style={{ color: '#4a5c21', fontFamily: 'Mundial-Light, Mundial, sans-serif' }}>
-                Dit is een vorm van <strong>geluidstherapie met stemvorken</strong>. De trillingen werken via specifieke acupunctuurpunten en energiebanen en ondersteunen zowel lichamelijk als emotioneel herstel.
+                Dit is een vorm van <strong>geluidstherapie met stemvorken</strong>. De trillingen werken via specifieke acupunctuurpunten en energiebanen en ondersteunen zowel energetisch, lichamelijk als emotioneel herstel.
               </p>
             </div>
 

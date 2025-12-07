@@ -199,7 +199,7 @@ export default function Praktisch() {
               <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4">
                   <div>
                     <label htmlFor="naam" className="block mb-2 font-light text-sm md:text-base" style={{ fontFamily: 'Mundial-Light, Mundial, sans-serif', color: '#4a5d22' }}>
-                      Naam en voornaam *
+                      Voornaam en naam *
                     </label>
                     <input
                       type="text"
@@ -243,7 +243,7 @@ export default function Praktisch() {
 
                   <div>
                     <label htmlFor="onderwerp" className="block mb-2 font-light text-sm md:text-base" style={{ fontFamily: 'Mundial-Light, Mundial, sans-serif', color: '#4a5d22' }}>
-                      Onderwerp *
+                      Reden van contact *
                     </label>
                     <input
                       type="text"

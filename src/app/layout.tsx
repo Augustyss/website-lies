@@ -3,7 +3,7 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Cranio bij Lies',
-  description: 'Met zachte aandacht begeleid ik je naar meer rust, ruimte en verbinding in jezelf.',
+  description: 'Met zachte aandacht begeleid ik je naar rust, ruimte en verbinding in jezelf.',
   icons: {
     icon: [
       { url: '/images/logo_lies.svg', type: 'image/svg+xml' },

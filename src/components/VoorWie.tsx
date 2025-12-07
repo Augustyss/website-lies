@@ -90,7 +90,7 @@ export default function VoorWie() {
               Veel kinderen leven vooral 'in hun hoofd' door prikkels, verwachtingen en schermgebruik.{'\n'}
               Cranio helpt hen <strong>opnieuw verbinding te maken met hun lichaam en hun eigen noden.</strong>{'\n'}
               De therapie kan ondersteunen bij o.a. angst, bedplassen, hoofdpijn, buikpijn, somberheid, slaapproblemen, overprikkeling, sterke emoties en concentratieproblemen.{'\n'}
-              Voor HSP-kinderen en -tieners voelt Cranio vaak als een zachte thuisbasis waar ze meer adem en ruimte vinden.{'\n'}
+              Voor Hoog Sensitief Persoon-kinderen en -tieners voelt Cranio vaak als een zachte thuisbasis waar ze meer adem en ruimte vinden.{'\n'}
               Ouders blijven meestal bij de sessie aanwezig. Bij tieners bespreken we samen wat fijn en passend aanvoelt.
             </p>
           </div>

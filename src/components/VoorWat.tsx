@@ -60,7 +60,7 @@ export default function VoorWat() {
     },
     {
       title: 'HERSTEL NA TRAUMA',
-      text: 'Na een ongeval, operatie of emotionele gebeurtenis kan je lichaam in een verhoogde staat van alertheid blijven. Cranio helpt dit overlevingsmechanisme af te bouwen zodat herstel mogelijk wordt.',
+      text: 'Na een ongeval, operatie of emotionele gebeurtenis kan je lichaam in een verhoogde staat van alertheid blijven. Cranio helpt om de langdurige werking van een eigenlijk acuut bedoeld overlevingsmechanisme te temperen.',
     },
     {
       title: 'PERSOONLIJKE GROEI',
