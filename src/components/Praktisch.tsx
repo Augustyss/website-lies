@@ -167,8 +167,8 @@ export default function Praktisch() {
           </p>
         </div>
 
-        {/* Grid: Map + Form - onder pentagon maar boven vierkant */}
-        <div className="container mx-auto max-w-6xl relative" style={{ zIndex: 5 }}>
+        {/* Grid: Map + Form - boven pentagon */}
+        <div className="container mx-auto max-w-6xl relative" style={{ zIndex: 10 }}>
           <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-start relative">
             {/* Map placeholder - rechthoek met grijze achtergrond, achter pentagon - VERBORGEN OP MOBILE */}
             <div className="hidden md:block relative" style={{ 
@@ -182,7 +182,7 @@ export default function Praktisch() {
             }}></div>
 
             {/* Contact Form (geen aparte bg, alles cream) */}
-            <div>
+            <div style={{ position: 'relative', zIndex: 10 }}>
               {/* Status messages */}
               {submitStatus.type && (
                 <div 
@@ -191,12 +191,13 @@ export default function Praktisch() {
                       ? 'bg-green-50 text-green-800 border border-green-200' 
                       : 'bg-red-50 text-red-800 border border-red-200'
                   }`}
+                  style={{ position: 'relative', zIndex: 11 }}
                 >
                   {submitStatus.message}
                 </div>
               )}
               
-              <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4" style={{ position: 'relative', zIndex: 10 }}>
                   <div>
                     <label htmlFor="naam" className="block mb-2 font-light text-sm md:text-base" style={{ fontFamily: 'Mundial-Light, Mundial, sans-serif', color: '#4a5d22' }}>
                       Voornaam en naam *
