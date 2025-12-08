@@ -16,6 +16,8 @@ export async function POST(request: NextRequest) {
     // Email configuratie - gebruik environment variabelen
     const recipientEmail = process.env.CONTACT_EMAIL || 'cranio@lieschristiaens.be'
     const resendApiKey = process.env.RESEND_API_KEY
+    // Gebruik geverifieerd domein email als "from" adres, anders fallback naar Resend test email
+    const fromEmail = process.env.RESEND_FROM_EMAIL || 'Website Contact <onboarding@resend.dev>'
 
     // Email content
     const emailSubject = onderwerp || `Nieuw contactformulier bericht van ${naam}`
@@ -48,7 +50,7 @@ Dit bericht is verzonden via het contactformulier op lieschristiaens.be
         const resend = new Resend(resendApiKey)
         
         const result = await resend.emails.send({
-          from: 'Website Contact <onboarding@resend.dev>',
+          from: fromEmail,
           to: recipientEmail,
           replyTo: email,
           subject: emailSubject,
