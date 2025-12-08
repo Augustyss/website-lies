@@ -1,6 +1,6 @@
 # Email Setup Instructies
 
-Het contactformulier is nu werkend! Hier is hoe je het instelt:
+Het contactformulier is nu werkend, maar email verzending is nog niet geconfigureerd (om build errors te voorkomen). Hier is hoe je het instelt:
 
 ## Optie 1: Resend (Aanbevolen - Gratis tier beschikbaar)
 

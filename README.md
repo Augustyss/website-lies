@@ -42,12 +42,26 @@ Zie `README_EMAIL_SETUP.md` voor meer details.
 
 ## 📦 Deployment
 
-De website kan worden gedeployed op:
-- **Vercel** (aanbevolen) - Automatisch vanuit GitHub
-- **Netlify** - Ook gratis en eenvoudig
-- Andere hosting providers die Next.js ondersteunen
+Je code staat nu op GitHub: https://github.com/Augustyss/website-lies
 
-Zie `DEPLOYMENT_GUIDE.md` voor gedetailleerde instructies.
+### Deploy naar Vercel (Aanbevolen)
+
+1. Ga naar [vercel.com](https://vercel.com) en log in met GitHub
+2. Klik "Add New Project"
+3. Selecteer "Augustyss/website-lies"
+4. Klik "Deploy"
+5. Je website is live binnen 2 minuten!
+
+Zie `DEPLOY_VERCEL.md` voor gedetailleerde instructies.
+
+### Automatische Updates
+
+Elke keer als je code naar GitHub pusht, wordt de website automatisch bijgewerkt:
+```bash
+git add .
+git commit -m "Update"
+git push
+```
 
 ## 🛠️ Technologie
 
