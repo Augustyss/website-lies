@@ -41,41 +41,33 @@ Dit bericht is verzonden via het contactformulier op lieschristiaens.be
     console.log('Subject:', emailSubject)
     console.log('Body:', emailBody)
     
-    // TODO: Email verzending via Resend
-    // Voor nu wordt het alleen gelogd. Om email verzending te activeren:
-    // 1. Installeer: npm install resend
-    // 2. Voeg RESEND_API_KEY toe aan environment variables in Vercel
-    // 3. Uncomment de email verzending code hieronder
+    // Email verzending via Resend
     if (resendApiKey) {
-      console.log('⚠️  Email verzending is nog niet geconfigureerd.')
-      console.log('   Om email verzending te activeren:')
-      console.log('   1. Installeer: npm install resend')
-      console.log('   2. Zie README_EMAIL_SETUP.md voor instructies')
-      
-      // TODO: Uncomment dit wanneer resend is geïnstalleerd:
-      /*
       try {
         const { Resend } = await import('resend')
         const resend = new Resend(resendApiKey)
-        await resend.emails.send({
+        
+        const result = await resend.emails.send({
           from: 'Website Contact <onboarding@resend.dev>',
           to: recipientEmail,
           replyTo: email,
           subject: emailSubject,
           text: emailBody,
         })
-        console.log('✅ Email verzonden via Resend')
+        
+        console.log('✅ Email verzonden via Resend:', result)
       } catch (error) {
-        console.error('Email sending error:', error)
+        console.error('❌ Email sending error:', error)
+        // We gooien de error niet door, zodat de gebruiker nog steeds een succesmelding ziet
+        // maar we loggen het wel voor debugging
       }
-      */
     } else {
       console.log('⚠️  RESEND_API_KEY niet gevonden. Email wordt alleen gelogd.')
       console.log('   Voeg RESEND_API_KEY toe aan environment variables voor email verzending.')
     }
     
     return NextResponse.json(
-      { message: 'Bericht succesvol verzonden! We nemen zo snel mogelijk contact met je op.' },
+      { message: 'Ik neem zo snel mogelijk contact met je op.' },
       { status: 200 }
     )
   } catch (error) {
