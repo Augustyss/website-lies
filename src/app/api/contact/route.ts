@@ -67,7 +67,7 @@ Dit bericht is verzonden via het contactformulier op lieschristiaens.be
     }
     
     return NextResponse.json(
-      { message: 'Ik neem zo snel mogelijk contact met je op.' },
+      { message: 'Bericht succesvol verzonden! Ik neem zo snel mogelijk contact met je op.' },
       { status: 200 }
     )
   } catch (error) {
