@@ -56,10 +56,21 @@ Dit bericht is verzonden via het contactformulier op lieschristiaens.be
         })
         
         console.log('✅ Email verzonden via Resend:', result)
-      } catch (error) {
+        
+        // Check voor errors in result
+        if (result.error) {
+          console.error('❌ Resend API error:', result.error)
+          throw new Error(result.error.message || 'Email verzending mislukt')
+        }
+      } catch (error: any) {
         console.error('❌ Email sending error:', error)
+        console.error('Error details:', {
+          message: error?.message,
+          name: error?.name,
+          stack: error?.stack
+        })
         // We gooien de error niet door, zodat de gebruiker nog steeds een succesmelding ziet
-        // maar we loggen het wel voor debugging
+        // maar we loggen het wel voor debugging in Vercel logs
       }
     } else {
       console.log('⚠️  RESEND_API_KEY niet gevonden. Email wordt alleen gelogd.')
