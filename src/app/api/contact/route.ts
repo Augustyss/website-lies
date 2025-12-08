@@ -49,12 +49,47 @@ Dit bericht is verzonden via het contactformulier op lieschristiaens.be
         const { Resend } = await import('resend')
         const resend = new Resend(resendApiKey)
         
+        // HTML versie van de email voor betere deliverability
+        const emailBodyHTML = `
+          <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+            <h2 style="color: #4a5d23;">Nieuw contactformulier bericht van de website</h2>
+            <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+              <tr>
+                <td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold; width: 150px;">Naam:</td>
+                <td style="padding: 8px; border-bottom: 1px solid #eee;">${naam}</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold;">Email:</td>
+                <td style="padding: 8px; border-bottom: 1px solid #eee;"><a href="mailto:${email}">${email}</a></td>
+              </tr>
+              <tr>
+                <td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold;">Telefoon:</td>
+                <td style="padding: 8px; border-bottom: 1px solid #eee;">${telefoon || 'Niet opgegeven'}</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold;">Onderwerp:</td>
+                <td style="padding: 8px; border-bottom: 1px solid #eee;">${onderwerp || 'Geen onderwerp'}</td>
+              </tr>
+            </table>
+            <div style="margin: 20px 0;">
+              <h3 style="color: #4a5d23;">Bericht:</h3>
+              <p style="white-space: pre-wrap; background: #f5f5f5; padding: 15px; border-radius: 5px;">${bericht}</p>
+            </div>
+            <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;">
+            <p style="color: #666; font-size: 12px;">Dit bericht is verzonden via het contactformulier op lieschristiaens.be</p>
+          </div>
+        `
+        
         const result = await resend.emails.send({
           from: fromEmail,
           to: recipientEmail,
           replyTo: email,
           subject: emailSubject,
-          text: emailBody,
+          html: emailBodyHTML,
+          text: emailBody, // Fallback voor email clients die geen HTML ondersteunen
+          headers: {
+            'X-Entity-Ref-ID': `contact-${Date.now()}`,
+          },
         })
         
         console.log('✅ Email verzonden via Resend:', result)
