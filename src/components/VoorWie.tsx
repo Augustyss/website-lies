@@ -38,15 +38,10 @@ export default function VoorWie() {
           Cranio Sacraal Therapie is geschikt <strong className="font-semibold">voor alle leeftijden</strong> en ondersteunt in uiteenlopende situaties. Omdat de behandeling het zenuwstelsel tot rust brengt en het zelfherstellende vermogen activeert, werkt ze zowel lichamelijk als emotioneel.
         </p>
 
-        {/* Sectie B: Afbeeldingen Grid (3 Kolommen) - achter pentagon */}
-        <div className="grid md:grid-cols-3 gap-6 mb-8" style={{ position: 'relative', zIndex: 1 }}>
-          {/* Kolom 1 (Links) - Grijze placeholder */}
-          <div className="flex justify-center">
-            <div className="relative h-[300px] w-full max-w-[275px] bg-gray-300"></div>
-          </div>
-
-          {/* Kolom 2 (Midden) - Afbeelding - VIERKANT (iets smaller) */}
-          <div className="flex justify-center">
+        {/* Sectie B: Afbeeldingen Grid (3 Kolommen) - links en rechts voor pentagon, midden achter */}
+        <div className="relative mb-8">
+          {/* Midden foto - ACHTER pentagon (z-index 1) */}
+          <div className="flex justify-center relative" style={{ zIndex: 1 }}>
             <div className="relative h-[300px] w-full max-w-[260px] overflow-hidden">
               <Image
                 src="/images/Lies_Praktijk_1_dec_2024-29_Jongeren.jpg"
@@ -58,10 +53,41 @@ export default function VoorWie() {
               />
             </div>
           </div>
+          
+          {/* Links en rechts foto's - VOOR pentagon (z-index 20) */}
+          <div className="grid md:grid-cols-3 gap-6 absolute top-0 left-0 w-full" style={{ zIndex: 20 }}>
+            {/* Kolom 1 (Links) - Afbeelding - voor pentagon */}
+            <div className="flex justify-center relative">
+              <div className="relative h-[300px] w-full max-w-[275px] overflow-hidden">
+                <Image
+                  src="/images/Praktijk_Lies_feb_2016-5_links 2.jpg"
+                  alt="Cranio therapie praktijk"
+                  fill
+                  className="object-cover"
+                  quality={100}
+                  unoptimized
+                />
+              </div>
+            </div>
 
-          {/* Kolom 3 (Rechts) - Grijze placeholder */}
-          <div className="flex justify-center">
-            <div className="relative h-[300px] w-full max-w-[260px] bg-gray-300"></div>
+            {/* Kolom 2 (Midden) - Lege placeholder om grid layout te behouden */}
+            <div className="flex justify-center relative">
+              <div className="relative h-[300px] w-full max-w-[260px]"></div>
+            </div>
+
+            {/* Kolom 3 (Rechts) - Afbeelding - voor pentagon */}
+            <div className="flex justify-center relative">
+              <div className="relative h-[300px] w-full max-w-[260px] overflow-hidden">
+                <Image
+                  src="/images/Praktijk_Lies_feb_2016-13_rechts 2.jpg"
+                  alt="Cranio therapie praktijk"
+                  fill
+                  className="object-cover"
+                  quality={100}
+                  unoptimized
+                />
+              </div>
+            </div>
           </div>
         </div>
 

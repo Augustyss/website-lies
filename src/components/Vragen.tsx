@@ -67,7 +67,7 @@ export default function Vragen() {
             {/* Tweede foto - rechts uitgelijnd, evenwijdig met rechterkant titels - Responsive voor mobile */}
             <div className="relative w-full md:w-full md:ml-auto" style={{ aspectRatio: '360 / 252', maxWidth: '360px', marginTop: '48px' }}>
               <Image
-                src="/images/Stonemassage3.jpg"
+                src="/images/Stenen_Lies.jpg"
                 alt="LaStone therapie met warme stenen"
                 width={360}
                 height={252}
