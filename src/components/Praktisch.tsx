@@ -62,9 +62,23 @@ export default function Praktisch() {
       {/* Praktisch Info Section - White Background */}
       <section id="praktisch" className="pt-8 md:pt-12 pb-12 md:pb-20 px-6 md:px-16 lg:px-24 bg-white">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="font-sans text-3xl md:text-4xl lg:text-5xl text-center mb-8 md:mb-12 lg:mb-24" style={{ color: '#4a5d23', fontFamily: 'Mundial-Regular, Mundial, sans-serif', fontWeight: 400 }}>
+          <h2 className="font-sans text-3xl md:text-4xl lg:text-5xl text-center mb-16 md:mb-20 lg:mb-16" style={{ color: '#4a5d23', fontFamily: 'Mundial-Regular, Mundial, sans-serif', fontWeight: 400 }}>
             Welkom in mijn praktijk
           </h2>
+
+          {/* Foto onder de titel */}
+          <div className="flex justify-center mb-16 md:mb-20 lg:mb-24">
+            <div className="relative w-full max-w-6xl aspect-video overflow-hidden">
+              <Image
+                src="/images/Praktijk_Lies_13_12_25.jpg"
+                alt="Praktijk Lies"
+                fill
+                className="object-cover"
+                quality={100}
+                unoptimized
+              />
+            </div>
+          </div>
 
           {/* Three Columns Info - Stack on mobile (centered), side-by-side on desktop */}
           <div className="flex flex-col lg:flex-row items-center lg:items-start lg:justify-between gap-8 lg:gap-8">
@@ -122,9 +136,9 @@ export default function Praktisch() {
 
       {/* Contact Section - Cream Background volgens SVG */}
       <section className="pt-12 md:pt-20 pb-0 px-6 md:px-16 lg:px-24 bg-bg-cream relative overflow-hidden">
-        {/* Decorative Pentagon - Wit voor contact sectie, achter tekst maar voor vierkant */}
+        {/* Decorative Pentagon - Wit voor contact sectie, achter tekst maar voor grijze kader */}
         <div className="hidden md:block absolute pointer-events-none" style={{ 
-          zIndex: 8,
+          zIndex: 16,
           left: '50%',
           top: '42%',
           transform: 'translate(-50%, -50%)',
@@ -145,7 +159,7 @@ export default function Praktisch() {
         </div>
         
         {/* Titel en tekst - boven pentagon */}
-        <div className="container mx-auto max-w-6xl relative" style={{ zIndex: 10 }}>
+        <div className="container mx-auto max-w-6xl relative" style={{ zIndex: 20 }}>
           <h2 
             className="font-sans text-center mb-4 md:mb-6 relative text-3xl md:text-5xl"
             style={{ 
@@ -168,7 +182,7 @@ export default function Praktisch() {
         </div>
 
         {/* Grid: Map + Form - boven pentagon */}
-        <div className="container mx-auto max-w-6xl relative" style={{ zIndex: 10 }}>
+        <div className="container mx-auto max-w-6xl relative" style={{ zIndex: 15 }}>
           <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-start relative">
             {/* Map placeholder - rechthoek met grijze achtergrond, achter pentagon - VERBORGEN OP MOBILE */}
             <div className="hidden md:block relative" style={{ 
@@ -182,7 +196,7 @@ export default function Praktisch() {
             }}></div>
 
             {/* Contact Form (geen aparte bg, alles cream) */}
-            <div style={{ position: 'relative', zIndex: 10 }}>
+            <div style={{ position: 'relative', zIndex: 15 }}>
               {/* Status messages */}
               {submitStatus.type && (
                 <div 
@@ -191,13 +205,13 @@ export default function Praktisch() {
                       ? 'bg-green-50 text-green-800 border border-green-200' 
                       : 'bg-red-50 text-red-800 border border-red-200'
                   }`}
-                  style={{ position: 'relative', zIndex: 11 }}
+                  style={{ position: 'relative', zIndex: 16 }}
                 >
                   {submitStatus.message}
                 </div>
               )}
               
-              <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4" style={{ position: 'relative', zIndex: 10 }}>
+              <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4" style={{ position: 'relative', zIndex: 15 }}>
                   <div>
                     <label htmlFor="naam" className="block mb-2 font-light text-sm md:text-base" style={{ fontFamily: 'Mundial-Light, Mundial, sans-serif', color: '#4a5d22' }}>
                       Voornaam en naam *
@@ -289,7 +303,7 @@ export default function Praktisch() {
         </div>
 
         {/* Scroll to Top Arrow - boven alles */}
-        <div className="container mx-auto max-w-6xl relative" style={{ zIndex: 10 }}>
+        <div className="container mx-auto max-w-6xl relative" style={{ zIndex: 15 }}>
           <div className="mt-6 md:mt-8 flex justify-center">
             <a href="#hero" className="inline-block animate-bounce-slow">
               <div style={{ transform: 'rotate(180deg)', display: 'inline-block' }}>

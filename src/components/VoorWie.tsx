@@ -40,8 +40,18 @@ export default function VoorWie() {
 
         {/* Sectie B: Afbeeldingen Grid (3 Kolommen) - links en rechts voor pentagon, midden achter */}
         <div className="relative mb-8">
-          {/* Midden foto - ACHTER pentagon (z-index 1) */}
-          <div className="flex justify-center relative" style={{ zIndex: 1 }}>
+          {/* Mobile/Tablet: Stack alle drie foto's verticaal */}
+          <div className="flex flex-col lg:hidden gap-6 items-center">
+            <div className="relative h-[300px] w-full max-w-[275px] overflow-hidden">
+              <Image
+                src="/images/Praktijk_Lies_feb_2016-5_links 2.jpg"
+                alt="Cranio therapie praktijk"
+                fill
+                className="object-cover"
+                quality={100}
+                unoptimized
+              />
+            </div>
             <div className="relative h-[300px] w-full max-w-[260px] overflow-hidden">
               <Image
                 src="/images/Lies_Praktijk_1_dec_2024-29_Jongeren.jpg"
@@ -52,16 +62,26 @@ export default function VoorWie() {
                 unoptimized
               />
             </div>
+            <div className="relative h-[300px] w-full max-w-[260px] overflow-hidden">
+              <Image
+                src="/images/Praktijk_Lies_feb_2016-13_rechts 2.jpg"
+                alt="Cranio therapie praktijk"
+                fill
+                className="object-cover"
+                quality={100}
+                unoptimized
+              />
+            </div>
           </div>
-          
-          {/* Links en rechts foto's - VOOR pentagon (z-index 20) */}
-          <div className="grid md:grid-cols-3 gap-6 absolute top-0 left-0 w-full" style={{ zIndex: 20 }}>
-            {/* Kolom 1 (Links) - Afbeelding - voor pentagon */}
-            <div className="flex justify-center relative">
-              <div className="relative h-[300px] w-full max-w-[275px] overflow-hidden">
+
+          {/* Desktop: Originele layout met z-index layering */}
+          <div className="hidden lg:block relative">
+            {/* Midden foto - ACHTER pentagon (z-index 1) */}
+            <div className="flex justify-center relative" style={{ zIndex: 1 }}>
+              <div className="relative h-[300px] w-full max-w-[260px] overflow-hidden">
                 <Image
-                  src="/images/Praktijk_Lies_feb_2016-5_links 2.jpg"
-                  alt="Cranio therapie praktijk"
+                  src="/images/Lies_Praktijk_1_dec_2024-29_Jongeren.jpg"
+                  alt="Cranio therapie voor kinderen en jongeren"
                   fill
                   className="object-cover"
                   quality={100}
@@ -70,22 +90,39 @@ export default function VoorWie() {
               </div>
             </div>
 
-            {/* Kolom 2 (Midden) - Lege placeholder om grid layout te behouden */}
-            <div className="flex justify-center relative">
-              <div className="relative h-[300px] w-full max-w-[260px]"></div>
-            </div>
+            {/* Links en rechts foto's - VOOR pentagon (z-index 20) */}
+            <div className="grid grid-cols-3 gap-6 absolute top-0 left-0 w-full" style={{ zIndex: 20 }}>
+              {/* Kolom 1 (Links) - Afbeelding - voor pentagon */}
+              <div className="flex justify-center relative">
+                <div className="relative h-[300px] w-full max-w-[275px] overflow-hidden">
+                  <Image
+                    src="/images/Praktijk_Lies_feb_2016-5_links 2.jpg"
+                    alt="Cranio therapie praktijk"
+                    fill
+                    className="object-cover"
+                    quality={100}
+                    unoptimized
+                  />
+                </div>
+              </div>
 
-            {/* Kolom 3 (Rechts) - Afbeelding - voor pentagon */}
-            <div className="flex justify-center relative">
-              <div className="relative h-[300px] w-full max-w-[260px] overflow-hidden">
-                <Image
-                  src="/images/Praktijk_Lies_feb_2016-13_rechts 2.jpg"
-                  alt="Cranio therapie praktijk"
-                  fill
-                  className="object-cover"
-                  quality={100}
-                  unoptimized
-                />
+              {/* Kolom 2 (Midden) - Lege placeholder om grid layout te behouden */}
+              <div className="flex justify-center relative">
+                <div className="relative h-[300px] w-full max-w-[260px]"></div>
+              </div>
+
+              {/* Kolom 3 (Rechts) - Afbeelding - voor pentagon */}
+              <div className="flex justify-center relative">
+                <div className="relative h-[300px] w-full max-w-[260px] overflow-hidden">
+                  <Image
+                    src="/images/Praktijk_Lies_feb_2016-13_rechts 2.jpg"
+                    alt="Cranio therapie praktijk"
+                    fill
+                    className="object-cover"
+                    quality={100}
+                    unoptimized
+                  />
+                </div>
               </div>
             </div>
           </div>
