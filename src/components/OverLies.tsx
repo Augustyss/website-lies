@@ -57,7 +57,7 @@ export default function OverLies() {
 
             {/* Paragraaf 2 - Opleidingen */}
             <p className="leading-relaxed font-light" style={{ color: '#485d23' }}>
-              In 2013 behaalde ik mijn diploma als craniosacraaltherapeut aan het <a href="https://www.upledger.com" target="_blank" rel="noopener noreferrer" style={{ color: '#485d23', textDecoration: 'underline' }}>Upledger Institute</a>. Daarna trok ik naar Engeland om me verder te verdiepen in het volledige curriculum, met onder meer <em>The Brain Speaks</em>, <em>Touching the Brain</em>, <em>Pediatrics</em>, <em>Sensory Integration</em>, <em>Beyond the Cranial Base</em>, <em>Cycle of Life en Conception</em>, <em>Pregnancy and Birth</em>. Ik liep er stage bij collega-therapeuten, assisteerde tijdens opleidingen en werd opgeleid tot mentor.
+              In 2013 behaalde ik mijn diploma als craniosacraaltherapeut aan het <a href="https://www.upledger.com" target="_blank" rel="noopener noreferrer" style={{ color: '#485d23', textDecoration: 'underline' }}>Upledger</a> Institute België. Daarna trok ik naar Engeland om me verder te verdiepen in het volledige curriculum, met onder meer The Brain Speaks, Touching the Brain, Pediatrics, Sensory Integration, Beyond the Cranial Base, Cycle of Life en Conception, Pregnancy and Birth. Ik liep er stage bij collega-therapeuten, assisteerde tijdens opleidingen en werd opgeleid tot mentor.
             </p>
 
             {/* Paragraaf 3 */}
