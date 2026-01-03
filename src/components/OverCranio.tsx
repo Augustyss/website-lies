@@ -35,7 +35,7 @@ export default function OverCranio() {
               fontWeight: 300
             }}
           >
-            Cranio Sacraal Therapie is een zachte vorm van lichaamswerk die het zelfherstellende vermogen van je lichaam ondersteunt. Met subtiele aanraking breng ik je zenuwstelsel tot rust, en zo maak je ruimte voor een diepere balans. Pijn en spanning en andere klachten verzachten, je ervaart meer ruimte en rust in jezelf. Je kan ademen.
+            Cranio Sacraal Therapie is een zachte vorm van lichaamswerk die het zelfherstellende vermogen van je lichaam ondersteunt. Met subtiele aanraking breng ik je zenuwstelsel tot rust, en zo maak je ruimte voor een diepere balans. Pijn en spanning en andere klachten verzachten, je ervaart meer ruimte en rust in jezelf.
           </p>
 
           {/* D. Het Logo (DIPLOMATE tekst zit al in de jpg) */}

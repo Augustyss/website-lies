@@ -47,11 +47,78 @@ export default function Vragen() {
           </div>
         </div>
 
-        {/* Rij 2: Afbeeldingen (Links) - Tekst (Rechts) */}
-        <div className="grid md:grid-cols-2 gap-8 md:gap-36 items-start mb-24 md:mb-40">
-          {/* Links - 2 Afbeeldingen gestapeld in zigzag patroon - verhouding 360:252, subtiel zigzag - Responsive voor mobile */}
-          <div className="order-2 md:order-1 md:-mt-10">
-            {/* Eerste foto - evenwijdig met linkse titels */}
+        {/* Rij 2: Andere technieken */}
+        {/* Mobile: interleaved zodat eerste foto onder Acutonics staat */}
+        <div className="md:hidden space-y-6 mb-24">
+          <div>
+            <h3 className="text-lg uppercase tracking-widest mb-3" style={{ color: '#a0b551', fontFamily: 'Mundial-DemiBold, Mundial, sans-serif', fontWeight: 600 }}>
+              GEBRUIK JE TIJDENS EEN SESSIE OOK ANDERE TECHNIEKEN?
+            </h3>
+            <p className="text-sm font-light leading-relaxed mb-2" style={{ color: '#4a5c21', fontFamily: 'Mundial-Light, Mundial, sans-serif' }}>
+              Soms wel, wanneer ik inschat als dat helpend is voor jou als deel van de sessie.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-base mb-2" style={{ 
+              color: '#4a5d22', 
+              fontFamily: 'Mundial-DemiBold, Mundial, sans-serif', 
+              fontWeight: 600,
+              lineHeight: '24pt',
+              letterSpacing: '0'
+            }}>
+              Acutonics
+            </h4>
+            <p className="text-sm font-light leading-relaxed" style={{ color: '#4a5c21', fontFamily: 'Mundial-Light, Mundial, sans-serif' }}>
+              Dit is een vorm van <strong>geluidstherapie met stemvorken</strong>. De trillingen werken via specifieke acupunctuurpunten en energiebanen en ondersteunen zowel energetisch, lichamelijk als emotioneel herstel.
+            </p>
+          </div>
+
+          <div className="relative w-full" style={{ aspectRatio: '360 / 252', maxWidth: '360px' }}>
+            <Image
+              src="/images/Fonoforese.jpg"
+              alt="Acutonics - geluidstherapie met stemvorken"
+              width={360}
+              height={252}
+              className="object-cover"
+              style={{ width: '100%', height: '100%' }}
+              quality={100}
+              unoptimized
+            />
+          </div>
+
+          <div>
+            <h4 className="text-base mb-2" style={{ 
+              color: '#4a5d22', 
+              fontFamily: 'Mundial-DemiBold, Mundial, sans-serif', 
+              fontWeight: 600,
+              lineHeight: '24pt',
+              letterSpacing: '0'
+            }}>
+              LaStone therapie
+            </h4>
+            <p className="text-sm font-light leading-relaxed" style={{ color: '#4a5c21', fontFamily: 'Mundial-Light, Mundial, sans-serif' }}>
+              Ik werk soms ook met <strong>warme en koude stenen</strong>. Basalt, marmer of andere mineralen kunnen op of onder je lichaam worden geplaatst om ontspanning te verdiepen. Vaak 'vragen' stenen er als het ware om deel te worden van de sessie; ik gebruik ze alleen wanneer dat klopt voor jou.
+            </p>
+          </div>
+
+          <div className="relative w-full" style={{ aspectRatio: '360 / 252', maxWidth: '360px' }}>
+            <Image
+              src="/images/Stenen_Lies.jpg"
+              alt="LaStone therapie met warme stenen"
+              width={360}
+              height={252}
+              className="object-cover"
+              style={{ width: '100%', height: '100%' }}
+              quality={100}
+              unoptimized
+            />
+          </div>
+        </div>
+
+        {/* Desktop/tablet: 2-koloms layout met kleine negatieve marge voor foto's */}
+        <div className="hidden md:grid md:grid-cols-2 gap-8 md:gap-36 items-start mb-24 md:mb-40">
+          <div className="md:-mt-2">
             <div className="relative w-full md:w-full mb-4 md:mb-6" style={{ aspectRatio: '360 / 252', maxWidth: '360px' }}>
               <Image
                 src="/images/Fonoforese.jpg"
@@ -64,7 +131,6 @@ export default function Vragen() {
                 unoptimized
               />
             </div>
-            {/* Tweede foto - rechts uitgelijnd, evenwijdig met rechterkant titels - Responsive voor mobile */}
             <div className="relative w-full md:w-full md:ml-auto" style={{ aspectRatio: '360 / 252', maxWidth: '360px', marginTop: '48px' }}>
               <Image
                 src="/images/Stenen_Lies.jpg"
@@ -79,8 +145,7 @@ export default function Vragen() {
             </div>
           </div>
 
-          {/* Rechts - Tekst */}
-          <div className="space-y-6 md:space-y-12 order-1 md:order-2">
+          <div className="space-y-6 md:space-y-12">
             <div>
               <h3 className="text-lg md:text-xl uppercase tracking-widest mb-3 md:mb-4" style={{ color: '#a0b551', fontFamily: 'Mundial-DemiBold, Mundial, sans-serif', fontWeight: 600 }}>
                 GEBRUIK JE TIJDENS EEN SESSIE OOK ANDERE TECHNIEKEN?
@@ -122,10 +187,44 @@ export default function Vragen() {
           </div>
         </div>
 
-        {/* Rij 3: Tekst (Links) - Afbeelding (Rechts) */}
-        <div className="grid md:grid-cols-2 gap-8 md:gap-36 items-start md:items-center mb-24 md:mb-40">
-          {/* Links - Tekst */}
-          <div className="space-y-8 md:space-y-20 order-2 md:order-1">
+        {/* Rij 3: Kleding / sessies */}
+        {/* Mobile: tekst gevolgd door afbeelding direct onder eerste blok */}
+        <div className="md:hidden space-y-8 mb-24">
+          <div>
+            <h3 className="text-lg uppercase tracking-widest mb-3" style={{ color: '#a0b551', fontFamily: 'Mundial-DemiBold, Mundial, sans-serif', fontWeight: 600 }}>
+              WAT DRAAG IK TIJDENS EEN SESSIE?
+            </h3>
+            <p className="text-sm font-light leading-relaxed mb-4" style={{ color: '#4a5c21', fontFamily: 'Mundial-Light, Mundial, sans-serif' }}>
+              <strong>Comfortabele kleren</strong> waarin je makkelijk beweegt. Je houdt je kleding aan; alleen je schoenen gaan uit. Een extra trui kan fijn zijn om na de sessie warm te blijven. Graag vraag ik je om geen parfum, deo of aftershave te gebruiken.
+            </p>
+          </div>
+
+          <div className="relative w-full" style={{ aspectRatio: '504 / 378', maxWidth: '100%' }}>
+            <Image
+              src="/images/Cranio algemeen 2.jpg"
+              alt="Cranio sacraal therapie - handen behandeling"
+              width={504}
+              height={378}
+              className="object-cover"
+              style={{ width: '100%', height: '100%' }}
+              quality={100}
+              unoptimized
+            />
+          </div>
+
+          <div>
+            <h3 className="text-lg uppercase tracking-widest mb-3" style={{ color: '#a0b551', fontFamily: 'Mundial-DemiBold, Mundial, sans-serif', fontWeight: 600 }}>
+              HOEVEEL SESSIES HEB IK NODIG?
+            </h3>
+            <p className="text-sm font-light leading-relaxed" style={{ color: '#4a5c21', fontFamily: 'Mundial-Light, Mundial, sans-serif' }}>
+              Dat verschilt per persoon. Het aantal sessies hangt af van jouw vraag en wat je lichaam nodig heeft.
+            </p>
+          </div>
+        </div>
+
+        {/* Desktop/tablet: 2-koloms layout blijft */}
+        <div className="hidden md:grid md:grid-cols-2 gap-8 md:gap-36 items-start md:items-center mb-24 md:mb-40">
+          <div className="space-y-8 md:space-y-20">
             <div>
               <h3 className="text-lg md:text-xl uppercase tracking-widest mb-3 md:mb-4" style={{ color: '#a0b551', fontFamily: 'Mundial-DemiBold, Mundial, sans-serif', fontWeight: 600 }}>
                 WAT DRAAG IK TIJDENS EEN SESSIE?
@@ -145,8 +244,7 @@ export default function Vragen() {
             </div>
           </div>
 
-          {/* Rechts - Afbeelding - verhouding 504:378 zoals in screenshot - Responsive voor mobile */}
-          <div className="relative w-full order-1 md:order-2 mb-8 md:mb-0" style={{ aspectRatio: '504 / 378', maxWidth: '100%', width: '100%' }}>
+          <div className="relative w-full mb-0" style={{ aspectRatio: '504 / 378', maxWidth: '100%', width: '100%' }}>
             <Image
               src="/images/Cranio algemeen 2.jpg"
               alt="Cranio sacraal therapie - handen behandeling"

@@ -35,7 +35,7 @@ export default function VoorWie() {
         </h2>
         
         <p className="leading-relaxed text-center max-w-3xl mx-auto mb-16 text-lg font-light relative" style={{ color: '#4b5d22', zIndex: 15 }}>
-          Cranio Sacraal Therapie is geschikt <strong className="font-semibold">voor alle leeftijden</strong> en ondersteunt in uiteenlopende situaties. Omdat de behandeling het zenuwstelsel tot rust brengt en het zelfherstellende vermogen activeert, werkt ze zowel lichamelijk als emotioneel.
+          Cranio Sacraal Therapie is geschikt <strong className="font-semibold">voor alle leeftijden</strong> en ondersteunt in uiteenlopende situaties. Omdat de behandeling het zenuwstelsel tot rust brengt en het zelfherstellende vermogen activeert, werkt het zowel lichamelijk als emotioneel.
         </p>
 
         {/* Sectie B: Afbeeldingen Grid (3 Kolommen) - links en rechts voor pentagon, midden achter */}

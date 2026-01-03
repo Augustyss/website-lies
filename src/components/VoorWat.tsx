@@ -43,12 +43,12 @@ function Card({ title, text }: CardProps) {
 export default function VoorWat() {
   const cards = [
     {
-      title: 'STRESS EN SPANNING',
-      text: 'Bij aanhoudende stress kan je systeem overbelast raken. Cranio helpt je te vertragen, spanning los te laten en meer innerlijke rust te ervaren.',
-    },
-    {
       title: 'PIJNKLACHTEN',
       text: 'Hoofdpijn, migraine, nek- en rugpijn, whiplash, spijsverteringsklachten of chronische spierpijn: door subtiele aanrakingen krijgt het lichaam opnieuw bewegingsvrijheid en ontspanning.',
+    },
+    {
+      title: 'STRESS EN SPANNING',
+      text: 'Bij aanhoudende stress kan je systeem overbelast raken. Cranio helpt je te vertragen, spanning los te laten en meer innerlijke rust te ervaren.',
     },
     {
       title: 'OVERPRIKKELING EN BURN-OUT',
