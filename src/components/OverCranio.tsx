@@ -43,7 +43,7 @@ export default function OverCranio() {
             <div className="relative w-40 h-40 md:w-44 md:h-44 mx-auto">
               <Image 
                 src="/images/upledger-logo.jpg" 
-                alt="Upledger Institute CST-I Certified Diplomate Logo"
+                alt="Upledger Instituut CST-I Certified Diplomate Logo"
                 fill
                 className="object-contain"
                 unoptimized
