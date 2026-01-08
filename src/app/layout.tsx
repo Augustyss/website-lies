@@ -2,10 +2,10 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Craniosacraaltherapie bij Lies | Bellegem',
+  title: 'Cranio bij Lies',
   description: 'Craniosacraaltherapie in Bellegem bij Lies — rust, herstel en ontspanning.',
   openGraph: {
-    title: 'Craniosacraaltherapie bij Lies',
+    title: 'Cranio bij Lies',
     description: 'Ervaren craniosacraaltherapeut in Bellegem — ervaar diepe ontspanning & herstel.',
     url: 'https://website-lies.vercel.app',
     siteName: 'Cranio bij Lies',
