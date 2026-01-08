@@ -2,8 +2,14 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Cranio bij Lies',
-  description: 'Met zachte aandacht begeleid ik je naar rust, ruimte en verbinding in jezelf.',
+  title: 'Craniosacraaltherapie bij Lies | Bellegem',
+  description: 'Craniosacraaltherapie in Bellegem bij Lies — rust, herstel en ontspanning.',
+  openGraph: {
+    title: 'Craniosacraaltherapie bij Lies',
+    description: 'Ervaren craniosacraaltherapeut in Bellegem — ervaar diepe ontspanning & herstel.',
+    url: 'https://website-lies.vercel.app',
+    siteName: 'Cranio bij Lies',
+  },
   icons: {
     icon: [
       { url: '/images/logo_lies.svg', type: 'image/svg+xml' },
