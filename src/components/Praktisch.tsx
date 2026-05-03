@@ -4,12 +4,14 @@ import { useState } from 'react'
 import Image from 'next/image'
 
 export default function Praktisch() {
+  const web3FormsKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY
   const [formData, setFormData] = useState({
     naam: '',
     telefoon: '',
     email: '',
     onderwerp: '',
-    bericht: ''
+    bericht: '',
+    botcheck: ''
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error' | null, message: string }>({ type: null, message: '' })
@@ -19,31 +21,61 @@ export default function Praktisch() {
     setIsSubmitting(true)
     setSubmitStatus({ type: null, message: '' })
 
+    if (!web3FormsKey) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Formulier is tijdelijk niet beschikbaar. Probeer later opnieuw.'
+      })
+      setIsSubmitting(false)
+      return
+    }
+
+    if (formData.botcheck) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Verzending geblokkeerd. Probeer opnieuw.'
+      })
+      setIsSubmitting(false)
+      return
+    }
+
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          access_key: web3FormsKey,
+          from_name: 'Website Contact',
+          subject: `Nieuwe aanvraag via website: ${formData.onderwerp || formData.naam}`,
+          replyto: formData.email,
+          naam: formData.naam,
+          telefoon: formData.telefoon,
+          email: formData.email,
+          onderwerp: formData.onderwerp,
+          bericht: formData.bericht,
+          botcheck: ''
+        }),
       })
 
       const data = await response.json()
 
-      if (response.ok) {
-        setSubmitStatus({ type: 'success', message: data.message })
+      if (response.ok && data.success) {
+        setSubmitStatus({ type: 'success', message: 'Bericht succesvol verzonden! Ik neem zo snel mogelijk contact met je op.' })
         // Reset form
         setFormData({
           naam: '',
           telefoon: '',
           email: '',
           onderwerp: '',
-          bericht: ''
+          bericht: '',
+          botcheck: ''
         })
       } else {
-        setSubmitStatus({ type: 'error', message: data.error || 'Er is een fout opgetreden. Probeer het later opnieuw.' })
+        setSubmitStatus({ type: 'error', message: 'Verzenden lukt momenteel niet. Probeer het later opnieuw.' })
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus({ type: 'error', message: 'Er is een fout opgetreden. Probeer het later opnieuw.' })
     } finally {
       setIsSubmitting(false)
@@ -286,6 +318,23 @@ export default function Praktisch() {
                       style={{ minHeight: '120px' }}
                     ></textarea>
                   </div>
+
+                  <input
+                    type="checkbox"
+                    name="botcheck"
+                    id="botcheck"
+                    checked={Boolean(formData.botcheck)}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        botcheck: e.target.checked ? '1' : ''
+                      })
+                    }
+                    className="hidden"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                  />
 
                   {/* Verstuur button uitgelijnd met onderkant textarea op desktop, volle breedte op mobile */}
                   <button
