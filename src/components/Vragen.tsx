@@ -114,6 +114,21 @@ export default function Vragen() {
               unoptimized
             />
           </div>
+
+          <div>
+            <h4 className="text-base mb-2" style={{ 
+              color: '#4a5d22', 
+              fontFamily: 'Mundial-DemiBold, Mundial, sans-serif', 
+              fontWeight: 600,
+              lineHeight: '24pt',
+              letterSpacing: '0'
+            }}>
+              Sjamanistische ademreis
+            </h4>
+            <p className="text-sm font-light leading-relaxed" style={{ color: '#4a5c21', fontFamily: 'Mundial-Light, Mundial, sans-serif' }}>
+              Ik kan je aanraden om samen met mij een sjamanistische ademreis te doen. Door intens verbonden te ademen, komen er opgeslagen ballast vrij. Dit geeft een diepe energetische verbondenheid met jezelf.
+            </p>
+          </div>
         </div>
 
         {/* Desktop/tablet: 2-koloms layout met kleine negatieve marge voor foto's */}
@@ -145,7 +160,7 @@ export default function Vragen() {
             </div>
           </div>
 
-          <div className="space-y-6 md:space-y-12">
+          <div className="space-y-6 md:space-y-8 md:-mt-16">
             <div>
               <h3 className="text-lg md:text-xl uppercase tracking-widest mb-3 md:mb-4" style={{ color: '#a0b551', fontFamily: 'Mundial-DemiBold, Mundial, sans-serif', fontWeight: 600 }}>
                 GEBRUIK JE TIJDENS EEN SESSIE OOK ANDERE TECHNIEKEN?
@@ -182,6 +197,21 @@ export default function Vragen() {
               </h4>
               <p className="text-sm md:text-base font-light leading-relaxed" style={{ color: '#4a5c21', fontFamily: 'Mundial-Light, Mundial, sans-serif' }}>
                 Ik werk soms ook met <strong>warme en koude stenen</strong>. Basalt, marmer of andere mineralen kunnen op of onder je lichaam worden geplaatst om ontspanning te verdiepen. Vaak 'vragen' stenen er als het ware om deel te worden van de sessie; ik gebruik ze alleen wanneer dat klopt voor jou.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="text-base md:text-lg mb-2 md:mb-3" style={{ 
+                color: '#4a5d22', 
+                fontFamily: 'Mundial-DemiBold, Mundial, sans-serif', 
+                fontWeight: 600,
+                lineHeight: '24pt',
+                letterSpacing: '0'
+              }}>
+                Sjamanistische ademreis
+              </h4>
+              <p className="text-sm md:text-base font-light leading-relaxed" style={{ color: '#4a5c21', fontFamily: 'Mundial-Light, Mundial, sans-serif' }}>
+                Ik kan je aanraden om samen met mij een sjamanistische ademreis te doen. Door intens verbonden te ademen, komen er opgeslagen ballast vrij. Dit geeft een diepe energetische verbondenheid met jezelf.
               </p>
             </div>
           </div>

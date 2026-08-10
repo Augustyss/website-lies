@@ -6,6 +6,7 @@ import OverCranio from '@/components/OverCranio'
 import VoorWie from '@/components/VoorWie'
 import VoorWat from '@/components/VoorWat'
 import Vragen from '@/components/Vragen'
+import YogaMeditatie from '@/components/YogaMeditatie'
 import Praktisch from '@/components/Praktisch'
 import SmoothScroll from '@/components/SmoothScroll'
 
@@ -35,8 +36,8 @@ export default function Home() {
         backgroundImage="/images/quote3.jpg"
       />
       <Vragen />
+      <YogaMeditatie />
       <Praktisch />
     </main>
   )
 }
-

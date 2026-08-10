@@ -10,6 +10,7 @@ const navItems = [
   { label: 'Voor wie', href: '#voor-wie' },
   { label: 'Voor wat', href: '#voor-wat' },
   { label: 'Vragen', href: '#vragen' },
+  { label: 'Yoga & meditatie', href: '#yoga-meditatie' },
   { label: 'Praktisch', href: '#praktisch' },
 ]
 
@@ -24,14 +25,16 @@ export default function Navigation() {
 
       // Determine active section
       const sections = navItems.map(item => item.href.substring(1))
-      const current = sections.find(section => {
+      // Adjacent sections can overlap the navigation marker briefly.
+      // Pick the last matching section so the section currently entered wins.
+      const current = sections.filter(section => {
         const element = document.getElementById(section)
         if (element) {
           const rect = element.getBoundingClientRect()
           return rect.top <= 150 && rect.bottom >= 150
         }
         return false
-      })
+      }).at(-1)
       
       if (current) setActiveSection(`#${current}`)
     }
@@ -72,7 +75,7 @@ export default function Navigation() {
         <ul 
           className="items-center absolute left-1/2 transform -translate-x-1/2 hidden lg:flex"
           style={{ 
-            gap: 'clamp(16px, 3.5vw, 80px)'
+            gap: 'clamp(8px, 1.2vw, 24px)'
           }}
         >
           {navItems.map((item) => {
@@ -81,7 +84,7 @@ export default function Navigation() {
               <li key={item.href}>
                 <a
                   href={item.href}
-                  className="px-4 py-1 rounded-full whitespace-nowrap transition-all duration-300"
+                  className="px-3 py-1 rounded-full whitespace-nowrap transition-all duration-300"
                   style={{
                     fontSize: '18px',
                     fontFamily: 'Mundial-Light, Mundial, sans-serif',
@@ -163,4 +166,3 @@ export default function Navigation() {
     </nav>
   )
 }
-

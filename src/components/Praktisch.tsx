@@ -167,7 +167,7 @@ export default function Praktisch() {
       </section>
 
       {/* Contact Section - Cream Background volgens SVG */}
-      <section className="pt-12 md:pt-20 pb-0 px-6 md:px-16 lg:px-24 bg-bg-cream relative overflow-hidden">
+      <section id="contact" className="pt-12 md:pt-20 pb-0 px-6 md:px-16 lg:px-24 bg-bg-cream relative overflow-hidden">
         {/* Decorative Pentagon - Wit voor contact sectie, achter tekst maar voor grijze kader */}
         <div className="hidden md:block absolute pointer-events-none" style={{ 
           zIndex: 16,
