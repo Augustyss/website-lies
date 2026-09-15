@@ -62,7 +62,7 @@ export default function Navigation() {
         <a href="#hero" className="absolute z-50" style={{ left: '24px' }}>
           <Image 
             src="/images/logo_lies.svg" 
-            alt="Lies Christiaens Logo" 
+            alt="Lies Christiaens"
             width={36} 
             height={36}
             style={{ width: '36px', height: '36px' }}

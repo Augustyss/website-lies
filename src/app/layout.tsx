@@ -2,10 +2,10 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Cranio bij Lies',
+  title: 'Lies Christiaens | Craniosacraaltherapie in Bellegem',
   description: 'Craniosacraaltherapie in Bellegem bij Lies — rust, herstel en ontspanning.',
   openGraph: {
-    title: 'Cranio bij Lies',
+    title: 'Lies Christiaens | Craniosacraaltherapie in Bellegem',
     description: 'Ervaren craniosacraaltherapeut in Bellegem — ervaar diepe ontspanning & herstel.',
     url: 'https://website-lies.vercel.app',
     siteName: 'Cranio bij Lies',
@@ -40,4 +40,3 @@ export default function RootLayout({
     </html>
   )
 }
-

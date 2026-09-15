@@ -8,7 +8,7 @@ export default function Hero() {
         <div style={{ marginBottom: '10px !important', display: 'block' }}>
           <Image 
             src="/images/logo_lies.svg" 
-            alt="Lies Christiaens Logo" 
+            alt="Lies Christiaens"
             width={120} 
             height={120}
             style={{ width: '120px', height: '120px', display: 'block', margin: '0 auto' }}
@@ -86,4 +86,3 @@ export default function Hero() {
     </section>
   )
 }
-
